@@ -1,18 +1,21 @@
 
 
-B = float
+B =  (input("digite o numero: "))
 
-Salario = float
+Salario =  (input("Digite seu salario: "))
 
-A = inteiro
+A =  (input ("digite seu numero A: "))
 
-Numero = inteiro
+Numero =  (input ("digite um numero: "))
+
+Resultado1 = int(B) * float(Salario)
+
+print("Resultado 1", Resultado1)
+
+Resultado2 = int(A) * int(Numero)
+
+print("Resultado 2", Resultado2)
 
 
-Numero = (A * 1)
 
-Salario = (B * C)
 
-print ("Valor Numero")
-
-print ("Valor Salario")

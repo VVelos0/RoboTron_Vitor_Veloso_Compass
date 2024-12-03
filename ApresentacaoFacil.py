@@ -1,11 +1,9 @@
+A = input("O valor de A é: ")
+B = input("O valor de B é: ")
 
+A = float(A)
+B = float(B)
 
-    A = float 
-    B = float 
-    Media  = float 
+Media = (A * 3.5 + B * 7.5) / 11
 
-
-    Media = (A * 3.5 + B * 7.5) / 11
-
-    print ("Media")
-    
+print ("Media dos valores é: ", Media)

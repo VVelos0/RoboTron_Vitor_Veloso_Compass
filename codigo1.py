@@ -1,22 +1,26 @@
 print ("Exercicio 2")
 
-  Ano = inteiro
-Mes =  inteiro
-dia =  inteiro
-n =  inteiro
+Ano = input("O ano é: ")
+Mes = input("O mês é: ")
+Dia = input("O dia é: ")
+N = input("Valor de N: ")
 
+Ano = int(Ano)
+Mes = int(Mes)
+Dia = int(Dia)
+N = int(N)
 
-Ano = n/365
+anos = N // 365
+resto_dias = N % 365
 
-n = n % 365
+meses = resto_dias // 30
+dias =  resto_dias % 30
 
-Mes = n/30
-
-Mes = n %30
-
-Dia = n
-
-
-
-       
-
+print("Ano é:", anos)
+print( "Mes é:", meses)
+print("O dia é:", dias)
+print("Valor de N", N)
+  
+  
+  
+  
