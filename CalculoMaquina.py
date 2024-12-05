@@ -4,6 +4,6 @@ def maior_de_idade(idade):
     else:
         print('Menor de idade')
 
-# Solicita a idade do usuário
+
 idade = int(input("Digite sua idade: "))
 maior_de_idade(idade)
