@@ -1,0 +1,23 @@
+JSON (JavaScript Object Notation) é um formato de intercâmbio de dados leve, 
+fácil de ler e escrever para humanos, 
+e também simples de interpretar e gerar por máquinas.
+Ele é amplamente utilizado em APIs e sistemas para enviar e receber dados entre cliente e servidor. 
+
+
+exemplos : 
+
+{"quantidade": 3,
+"usuarios": [
+    {
+        "nome": Vitor Veloso
+         "email: vitor-velososl@hotmail.com
+         "sexo": Masculino
+         "idade": 23
+    }
+]
+}
+
+
+
+
+ 

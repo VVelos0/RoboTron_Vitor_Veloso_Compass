@@ -1,0 +1,19 @@
+Uma API (Interface de Programação de Aplicações) é uma ponte que permite a comunicação entre diferentes sistemas, aplicações ou serviços. A API define as regras e protocolos para que os sistemas possam "conversar" e trocar dados de forma estruturada e segura, sem que um conheça a implementação interna do outro. 
+
+A arquitetura REST separa as responsabilidades do cliente e do servidor.
+O cliente cuida da interface com o usuário e da interação com os dados,
+enquanto o servidor se concentra no armazenamento e na manipulação dos dados. 
+Essa separação permite que ambos evoluam de maneira independente 
+
+APIs utilizam protocolos e formatos de dados padronizados para facilitar a comunicação.
+No caso das APIs web, os protocolos mais usados são o HTTP e o HTTPS, 
+ e os formatos de dados comuns incluem JSON e XML. 
+Vantagens de usar API em projetos, volume de dados e controle de acessos, Redução de custos. 
+
+Melhoria na comunicação: Facilidade e praticidade entre a comunicação com os integrantes na Sprint, além de agilizar bastante os processos dentro da empresa 
+
+Volume de dados: Filtrar entre as partes que realmente faz diferença dentro da organização, "descartando o desnecessário" 
+tendo isso como pratica, tem mais eficiência dentro dos projetos 
+Controle de acessos: Identificação de quem entra e quem sai, para ter o uso das informações sigilosas, com o rastreio do acesso, tem mais segurança dentro da empresa. 
+
+ 

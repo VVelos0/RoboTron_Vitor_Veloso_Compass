@@ -1,0 +1,59 @@
+API SERV REST com Swagger
+
+ 
+
+Swagger é a documentação dos devs referente ao Site ou Aplicativo, neles são informados as Rotas e as HTTPS 
+Das API, são utilizadas na boa parte das API do mundo inteiro e das grandes empresas. 
+
+ 
+
+Apenas Duas Funcionalidades de um e-commece basico. 
+Login – Nele o cliente precisa realizar o login, para acessar ao Site 
+
+ 
+
+Rota – POST realizar login 
+Status Code:  200 aceito bem pelo sistema as informações 
+Status Code: 400 Erros do cliente. Exemplo: E-mail ou senha invalidos. 
+
+ 
+
+Produtos – O cliente deve consultar os produtos e o ADM deve adicionar produto ou Excluir Produtos. 
+Rota - GET Listar Produtos cadastrados: Listamento de produtos cadastrados já no sistema  
+Status Code: 200 aceito bem pelo servidor as informações 
+
+Rota – POST cadastrar Produto: Listar Produto no sistema 
+Status Code: 401 - Erro do cliente = Autenticação é necessaria para o Produto 
+Status Code: 201 – O sistema registrou com sucesso as alteraçoes e aceitou o novo recurso 
+Status Code: 400 – Erro do Cliente – A solicitação é invalida ou mal informada 
+Status Code: 403 – Erro do Cliente – Acesso ao recurso é proibido, mesmo com alteração 
+
+ 
+
+Rota – GET Buscar produtos por ID: Colocando o ID do produto você sabe qual produto deseja 
+
+Para alteração 
+
+Status Code: 200 – Aceito bem pelo sistema as informações 
+Status Code: 400 – Erro do cliente – A solicitação é invalida ou mal informada 
+
+ 
+
+Rota – DELETE Excluir Produtos = geralmente já formada com ID, pois exclui apenas um produto 
+Do que todo o sistema, rota delete já é formada para a função de excluir UMA função. 
+
+ 
+
+Status Code: 200 – Aceito bem pelo sistema as informações 
+Status Code: 400 – Erro do cliente – A solicitação é invalida ou mal informada. 
+
+ 
+
+Rota – PUT editar Produto = incluiremos alterações de produtos que deseja. 
+
+Status Code: 200 – Aceito bem pelo sistema as informações 
+Status Code: 400 – Erro do cliente – A solicitação é invalida ou mal informada 
+Status Code: 401 - Erro do cliente - Autenticação é necessaria para o Produto 
+Status Code: 403 – Erro do cliente – Acesso ao recurso é proibido mesmo com autenticação. 
+
+

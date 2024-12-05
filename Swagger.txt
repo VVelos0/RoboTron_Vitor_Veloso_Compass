@@ -1,0 +1,16 @@
+O Swagger. 
+SMARTBEAR
+
+Swagger é um conjunto de ferramentas para ajudar a documentar, desenvolver, 
+testar e consumir APIs, especialmente APIs REST. 
+
+O objetivo do Swagger é facilitar o entendimento e a usabilidade das APIs,
+permitindo que desenvolvedores e usuários tenham uma visão clara dos endpoints,
+parâmetros, tipos de dados, e comportamentos da API. 
+
+Swagger é uma ótima resposta para que seja feito de maneira confiável os testes, 
+além de fazer testes automatizados... 
+é crucial para todo QE de back-end ter noção dos seus feitos da ferramenta Swagger,
+para ter sucesso na organização e reduzir riscos e falhas dentro do Software. 
+Parte de documentação do Software e Sites, quem faz são os DEVS, 
+e nós avaliamos se está correta essas informações. 

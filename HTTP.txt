@@ -1,0 +1,14 @@
+É um protocolo de comunicação usado para transferir dados entre navegadores e servidores na web. 
+O HTTP define como as mensagens são formatadas e transmitidas, 
+além de como os navegadores devem responder aos comandos enviados por servidores web. 
+
+ 
+
+Exemplo de HTTP 
+
+GET: Solicita dados de um servidor. É usado para buscar informações sem alterar o estado do recurso. 
+POST: Envia dados ao servidor, como formulários ou uploads de arquivos, criando ou alterando recursos. 
+PUT: Atualiza dados em um servidor, substituindo o recurso existente. 
+DELETE: Remove um recurso do servidor. 
+
+ 

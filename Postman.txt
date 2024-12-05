@@ -1,0 +1,20 @@
+Introdução Postman
+
+A utilização do PostMan é crucialmente feita para API, sendo umas das ferramentas mais usadas na aréa 
+De tecnologia. 
+Suas vantagens e definições: 
+Suporta qualquer API em HTTP, Api REST, SOAP. 
+
+Facil acesso a todos da organização, somente logar para ter acesso ao todo conteudo. 
+Criação de ambientes reduzindo os testes repetidos durante a Sprint.
+
+Automação de testes e  agilizando o tempo no time de QA, Automação é importante para testes especificos, 
+Pois tem testes que são mais ideal estar testando manualmente, tudo depende da prioridade de testes dentro da 
+Sprint e Projeto. 
+
+A interface do PostMan faz ele ser bastante usado por ser pratico, alterando escopo do codigo com formato JSON,
+ JavaScript, tendo diversas opções dentro do PostMan. 
+
+ 
+
+ 
