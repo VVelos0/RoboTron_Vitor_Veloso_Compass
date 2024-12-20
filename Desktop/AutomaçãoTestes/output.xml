@@ -1,50 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-16T14:17:34.314822" rpa="false" schemaversion="5">
-<suite id="s1" name="Amazon" source="C:\Users\vitor.alcantara\Desktop\Automação\amazon.robot">
-<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Eletronicos&quot;" line="7">
-<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-16T14:17:34.632358" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-16T14:17:34.632187" elapsed="2.057376"/>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-19T21:36:45.768679" rpa="false" schemaversion="5">
+<suite id="s1" name="APITest" source="c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\tests\APITest.robot">
+<test id="s1-t1" name="cenario 01: Cadastrar Novo usuario com sucesso na ServRest" line="10">
+<kw name="Criar novo usuario" owner="APIResource">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-12-19T21:36:46.247198" level="INFO">${palavra_aleatoria} = Itwt</msg>
+<var>${palavra_aleatoria}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.246753" elapsed="0.002988"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-12-16T14:17:36.689772" elapsed="0.041949"/>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2024-12-19T21:36:46.250364" level="INFO">${palavra_aleatoria} = itwt</msg>
+<var>${palavra_aleatoria}</var>
+<arg>${palavra_aleatoria}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.250061" elapsed="0.000454"/>
 </kw>
-<status status="PASS" start="2024-12-16T14:17:34.631629" elapsed="2.100234"/>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.251703" level="INFO">${EMAIL_TESTE} = itwt@emailtest.com</msg>
+<arg>${EMAIL_TESTE}</arg>
+<arg>${palavra_aleatoria}@emailtest.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.250724" elapsed="0.001208"/>
 </kw>
-<kw name="Acessar home page do site https://www.amazon.com.br/" owner="amazon_resources">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-16T14:17:36.733257" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-16T14:17:36.732937" elapsed="8.513897"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.252536" level="INFO">itwt@emailtest.com</msg>
+<arg>${EMAIL_TESTE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.252205" elapsed="0.000528"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>locator=${MENU_ELETRONICOS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-16T14:17:45.247194" elapsed="0.039957"/>
+<kw name="Criar sessão na ServRest" owner="APIResource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.253822" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.253444" elapsed="0.000852"/>
 </kw>
-<status status="PASS" start="2024-12-16T14:17:36.732475" elapsed="8.554886"/>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-19T21:36:46.255446" level="INFO">Creating Session using : alias=ServRest, url=https://serverest.dev, headers={'Accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=ServRest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-19T21:36:46.254997" elapsed="0.000841"/>
 </kw>
-<doc>Acessando o Menu eletronicos e verificando as categorias</doc>
-<tag>Menus e categorias</tag>
-<status status="PASS" start="2024-12-16T14:17:34.630830" elapsed="10.656859"/>
+<status status="PASS" start="2024-12-19T21:36:46.253047" elapsed="0.003016"/>
+</kw>
+<status status="PASS" start="2024-12-19T21:36:46.246004" elapsed="0.010214"/>
+</kw>
+<kw name="Cadastrar o usuario criado na ServRest" owner="APIResource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.257751" level="INFO">${body} = {'nome': 'Fulano da Silva', 'email': 'itwt@emailtest.com', 'password': '1234', 'administrador': 'true'}</msg>
+<var>${body}</var>
+<arg>nome=Fulano da Silva</arg>
+<arg>email=${EMAIL_TESTE}</arg>
+<arg>password=1234</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.257369" elapsed="0.000547"/>
+</kw>
+<kw name="Criar sessão na ServRest" owner="APIResource">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.258791" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.258541" elapsed="0.000360"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-12-19T21:36:46.259282" level="INFO">Creating Session using : alias=ServRest, url=https://serverest.dev, headers={'Accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=ServRest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-12-19T21:36:46.259047" elapsed="0.000451"/>
+</kw>
+<status status="PASS" start="2024-12-19T21:36:46.258235" elapsed="0.001382"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-12-19T21:36:46.783829" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '103'} 
+ body=b'{"nome": "Fulano da Silva", "email": "itwt@emailtest.com", "password": "1234", "administrador": "true"}' 
+ </msg>
+<msg time="2024-12-19T21:36:46.784177" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '926f030069fb71be782937325241450f;o=1', 'Date': 'Fri, 20 Dec 2024 00:36:46 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "JHnD11iwoQxrTBTv"
+} 
+ </msg>
+<msg time="2024-12-19T21:36:46.784487" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=ServRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.259750" elapsed="0.524877"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.785526" level="INFO">201</msg>
+<arg>${resposta.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.784900" elapsed="0.000808"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-19T21:36:46.786540" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': 'JHnD11iwoQxrTBTv'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-19T21:36:46.785950" elapsed="0.000778"/>
+</kw>
+<status status="PASS" start="2024-12-19T21:36:46.256853" elapsed="0.530042"/>
+</kw>
+<status status="PASS" start="2024-12-19T21:36:46.245052" elapsed="0.542826"/>
 </test>
-<doc>Testes da Amazon.com.br com somente duas categorias de informatica</doc>
-<status status="PASS" start="2024-12-16T14:17:34.317478" elapsed="10.970765"/>
+<status status="PASS" start="2024-12-19T21:36:45.789138" elapsed="1.000950"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Menus e categorias</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="APITest">APITest</stat>
 </suite>
 </statistics>
 <errors>
