@@ -1,137 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-19T21:36:45.768679" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-01-05T23:27:00.184465" rpa="false" schemaversion="5">
 <suite id="s1" name="APITest" source="c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\tests\APITest.robot">
-<test id="s1-t1" name="cenario 01: Cadastrar Novo usuario com sucesso na ServRest" line="10">
-<kw name="Criar novo usuario" owner="APIResource">
-<kw name="Generate Random String" owner="String">
-<msg time="2024-12-19T21:36:46.247198" level="INFO">${palavra_aleatoria} = Itwt</msg>
-<var>${palavra_aleatoria}</var>
-<arg>length=4</arg>
-<arg>chars=[LETTERS]</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.246753" elapsed="0.002988"/>
-</kw>
-<kw name="Convert To Lower Case" owner="String">
-<msg time="2024-12-19T21:36:46.250364" level="INFO">${palavra_aleatoria} = itwt</msg>
-<var>${palavra_aleatoria}</var>
-<arg>${palavra_aleatoria}</arg>
-<doc>Converts string to lower case.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.250061" elapsed="0.000454"/>
-</kw>
-<kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.251703" level="INFO">${EMAIL_TESTE} = itwt@emailtest.com</msg>
-<arg>${EMAIL_TESTE}</arg>
-<arg>${palavra_aleatoria}@emailtest.com</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.250724" elapsed="0.001208"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.252536" level="INFO">itwt@emailtest.com</msg>
-<arg>${EMAIL_TESTE}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.252205" elapsed="0.000528"/>
-</kw>
-<kw name="Criar sessão na ServRest" owner="APIResource">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.253822" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
-<var>${headers}</var>
-<arg>Accept=application/json</arg>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.253444" elapsed="0.000852"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-12-19T21:36:46.255446" level="INFO">Creating Session using : alias=ServRest, url=https://serverest.dev, headers={'Accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=ServRest</arg>
-<arg>url=https://serverest.dev</arg>
-<arg>headers=${headers}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-12-19T21:36:46.254997" elapsed="0.000841"/>
-</kw>
-<status status="PASS" start="2024-12-19T21:36:46.253047" elapsed="0.003016"/>
-</kw>
-<status status="PASS" start="2024-12-19T21:36:46.246004" elapsed="0.010214"/>
-</kw>
-<kw name="Cadastrar o usuario criado na ServRest" owner="APIResource">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.257751" level="INFO">${body} = {'nome': 'Fulano da Silva', 'email': 'itwt@emailtest.com', 'password': '1234', 'administrador': 'true'}</msg>
-<var>${body}</var>
-<arg>nome=Fulano da Silva</arg>
-<arg>email=${EMAIL_TESTE}</arg>
-<arg>password=1234</arg>
-<arg>administrador=true</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.257369" elapsed="0.000547"/>
-</kw>
-<kw name="Criar sessão na ServRest" owner="APIResource">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.258791" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
-<var>${headers}</var>
-<arg>Accept=application/json</arg>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.258541" elapsed="0.000360"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-12-19T21:36:46.259282" level="INFO">Creating Session using : alias=ServRest, url=https://serverest.dev, headers={'Accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=ServRest</arg>
-<arg>url=https://serverest.dev</arg>
-<arg>headers=${headers}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-12-19T21:36:46.259047" elapsed="0.000451"/>
-</kw>
-<status status="PASS" start="2024-12-19T21:36:46.258235" elapsed="0.001382"/>
-</kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-12-19T21:36:46.783829" level="INFO">POST Request : url=https://serverest.dev/usuarios 
- path_url=/usuarios 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '103'} 
- body=b'{"nome": "Fulano da Silva", "email": "itwt@emailtest.com", "password": "1234", "administrador": "true"}' 
- </msg>
-<msg time="2024-12-19T21:36:46.784177" level="INFO">POST Response : url=https://serverest.dev/usuarios 
- status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '926f030069fb71be782937325241450f;o=1', 'Date': 'Fri, 20 Dec 2024 00:36:46 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
- body={
-    "message": "Cadastro realizado com sucesso",
-    "_id": "JHnD11iwoQxrTBTv"
-} 
- </msg>
-<msg time="2024-12-19T21:36:46.784487" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<test id="s1-t1" name=" cenario 06: DELETE deletar usuario" line="37">
+<kw name="DELETE Endpoint /usuarios" owner="APIResource">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-01-05T23:27:00.596292" level="FAIL">Non-existing index or alias 'serverest'.</msg>
 <var>${resposta}</var>
-<arg>alias=ServRest</arg>
-<arg>url=/usuarios</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.259750" elapsed="0.524877"/>
+<arg>serverest</arg>
+<arg>/usuarios/0uxuPY0cbmQhpEz1</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-01-05T23:27:00.595748" elapsed="0.006287">Non-existing index or alias 'serverest'.</status>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.785526" level="INFO">201</msg>
-<arg>${resposta.status_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.784900" elapsed="0.000808"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>resposta: ${resposta.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-01-05T23:27:00.602599" elapsed="0.000266"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-12-19T21:36:46.786540" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': 'JHnD11iwoQxrTBTv'}</msg>
-<arg>${resposta.json()}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-12-19T21:36:46.785950" elapsed="0.000778"/>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${resposta}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2025-01-05T23:27:00.603212" elapsed="0.000166"/>
 </kw>
-<status status="PASS" start="2024-12-19T21:36:46.256853" elapsed="0.530042"/>
+<status status="FAIL" start="2025-01-05T23:27:00.594835" elapsed="0.009015">Non-existing index or alias 'serverest'.</status>
 </kw>
-<status status="PASS" start="2024-12-19T21:36:46.245052" elapsed="0.542826"/>
+<kw name="Validar Status Code" owner="APIResource">
+<status status="NOT RUN" start="2025-01-05T23:27:00.604704" elapsed="0.000202"/>
+</kw>
+<status status="FAIL" start="2025-01-05T23:27:00.593587" elapsed="0.012160">Non-existing index or alias 'serverest'.</status>
 </test>
-<status status="PASS" start="2024-12-19T21:36:45.789138" elapsed="1.000950"/>
+<status status="FAIL" start="2025-01-05T23:27:00.193279" elapsed="0.414541"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="APITest">APITest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="APITest">APITest</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-01-05T23:27:00.222267" level="ERROR">Error in file 'c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\resources\APIResource.resource' on line 110: Creating keyword 'Cadastrar o usuario criado na ServRest' failed: Keyword with same name defined multiple times.</msg>
+<msg time="2025-01-05T23:27:00.588437" level="ERROR">Error in file 'c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\resources\APIResource.resource' on line 4: Library setting requires value.</msg>
+<msg time="2025-01-05T23:27:00.591366" level="ERROR">Error in file 'c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\tests\APITest.robot' on line 3: Error in file 'c:\Users\vitor.alcantara\Desktop\AutomaçãoTestes\ServRest.robot' on line 15: Resource file with 'Test Cases' section is invalid.</msg>
 </errors>
 </robot>
